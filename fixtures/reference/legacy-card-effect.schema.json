@@ -1,0 +1,840 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trench-arcane.local/schemas/card-effect.schema.json",
+  "title": "Trench Arcane Canonical Card Effect Schema",
+  "description": "Canonical alpha JSON AST for executable card effects. Root effects have triggers; branches are child effect nodes selected by branch_condition.",
+  "type": "object",
+  "required": [
+    "trigger",
+    "action"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "trigger": {
+      "$ref": "#/$defs/trigger"
+    },
+    "trigger_conditions": {
+      "$ref": "#/$defs/triggerConditions"
+    },
+    "payment_prompt": {
+      "$ref": "#/$defs/paymentPrompt"
+    },
+    "action": {
+      "$ref": "#/$defs/action"
+    },
+    "action_value": {
+      "$ref": "#/$defs/actionValue"
+    },
+    "target": {
+      "$ref": "#/$defs/targetSelector"
+    },
+    "branches": {
+      "$ref": "#/$defs/branches"
+    },
+    "keyword": {
+      "$ref": "#/$defs/keyword"
+    },
+    "stat_modifiers": {
+      "$ref": "#/$defs/statModifiers"
+    },
+    "resource": {
+      "$ref": "#/$defs/resourceSpec"
+    },
+    "token": {
+      "$ref": "#/$defs/tokenSpec"
+    },
+    "destination_zone": {
+      "$ref": "#/$defs/zone"
+    },
+    "cancel_scope": {
+      "$ref": "#/$defs/cancelScope"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/$defs/effectSemantics"
+    }
+  ],
+  "examples": [
+    {
+      "name": "flat",
+      "effect": {
+        "trigger": "ON_DEPLOY",
+        "action": "DRAW_CARD",
+        "action_value": 1
+      }
+    },
+    {
+      "name": "targeted",
+      "effect": {
+        "trigger": "ON_DEPLOY",
+        "action": "DEAL_DAMAGE",
+        "action_value": 2,
+        "target": {
+          "owner": "ENEMY",
+          "type": "UNIT",
+          "zone": "FIELD",
+          "mode": "EXACT",
+          "count": 1
+        }
+      }
+    },
+    {
+      "name": "payment",
+      "effect": {
+        "trigger": "ON_DEPLOY",
+        "payment_prompt": {
+          "is_optional": true,
+          "cost_value": 1,
+          "cost_type": "AETHER"
+        },
+        "action": "GRANT_KEYWORD",
+        "keyword": "SWIFT",
+        "target": {
+          "owner": "FRIENDLY",
+          "type": "UNIT",
+          "zone": "FIELD",
+          "mode": "EXACT",
+          "count": 1
+        }
+      }
+    },
+    {
+      "name": "branching",
+      "effect": {
+        "trigger": "ON_DRAW",
+        "payment_prompt": {
+          "is_optional": true,
+          "cost_value": 2,
+          "cost_type": "ANY"
+        },
+        "action": "BRANCHING_EFFECT",
+        "branches": [
+          {
+            "branch_condition": "PAYMENT_MIXED",
+            "action": "DEAL_DAMAGE",
+            "action_value": 1,
+            "target": {
+              "owner": "ANY",
+              "type": "BUILDING",
+              "zone": "ANY",
+              "mode": "EXACT",
+              "count": 1
+            }
+          },
+          {
+            "branch_condition": "PAYMENT_IDENTICAL",
+            "action": "DEAL_DAMAGE",
+            "action_value": 2,
+            "target": {
+              "owner": "ANY",
+              "type": "BUILDING",
+              "zone": "ANY",
+              "mode": "EXACT",
+              "count": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "variable-payment",
+      "effect": {
+        "trigger": "ON_DEPLOY",
+        "payment_prompt": {
+          "is_optional": false,
+          "cost_value": {
+            "kind": "bind_variable",
+            "symbol": "X",
+            "min": 1
+          },
+          "cost_type": "METAL"
+        },
+        "action": "DEPLOY_TOKEN",
+        "action_value": {
+          "kind": "variable_ref",
+          "symbol": "X"
+        },
+        "token": {
+          "name": "Robot",
+          "card_type": "Unit",
+          "attack": 0,
+          "armor": 0,
+          "health": 1
+        },
+        "target": {
+          "owner": "SELF",
+          "type": "UNIT",
+          "zone": "BASE",
+          "mode": "EXACT",
+          "count": 1
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "trigger": {
+      "type": "string",
+      "enum": [
+        "ON_DEPLOY",
+        "ON_DEATH",
+        "ON_ATTACK_DECLARE",
+        "ON_DEFEND",
+        "ON_PILLAGE",
+        "ON_TURN_START",
+        "ON_TURN_END",
+        "ON_ZONE_ENTER",
+        "ON_DRAW",
+        "ON_DEPLOY",
+        "ON_DAMAGE",
+        "ON_HEAL",
+        "PASSIVE"
+      ]
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "DEAL_DAMAGE",
+        "DEAL_TRUE_DAMAGE",
+        "HEAL",
+        "MODIFY_STAT",
+        "GRANT_KEYWORD",
+        "DEPLOY_TOKEN",
+        "DRAW_CARD",
+        "GENERATE_RESOURCE",
+        "DESTROY",
+        "MOVE",
+        "MOVE_FORCE",
+        "CANCEL_EFFECT",
+        "BRANCHING_EFFECT"
+      ]
+    },
+    "triggerConditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "IN_COMBAT",
+          "HAS_ARMOR",
+          "IS_FIRST_OCCURRENCE",
+          "CONTROLS_UNIT",
+          "CONTROLS_BUILDING",
+          "TARGET_DAMAGED",
+          "TARGET_DESTROYED",
+          "PAYMENT_PAID",
+          "SOURCE_IN_BASE",
+          "SOURCE_IN_FIELD",
+          "OPPONENT_TURN",
+          "YOUR_TURN"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "resourceType": {
+      "type": "string",
+      "enum": [
+        "ANY",
+        "BIOMASS",
+        "METAL",
+        "AETHER"
+      ]
+    },
+    "zone": {
+      "type": "string",
+      "enum": [
+        "ANY",
+        "BASE",
+        "FIELD",
+        "HAND",
+        "DISCARD",
+        "DECK",
+        "RESOURCE_DECK",
+        "COMMAND_ZONE",
+        "SAME",
+        "ADJACENT",
+        "FORWARD",
+        "BACKWARD"
+      ]
+    },
+    "keyword": {
+      "type": "string",
+      "enum": [
+        "SWIFT",
+        "SAPPER",
+        "DEMOLITIONIST",
+        "GUARD",
+        "ARMORED",
+        "PIERCING",
+        "PILLAGE",
+        "WARD",
+        "TOKEN"
+      ]
+    },
+    "actionValue": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "$ref": "#/$defs/valueExpression"
+        }
+      ],
+      "description": "Primary scalar amount or expression: damage/healing amount, cards drawn, resources generated, token count, movement distance, or a bound variable such as X."
+    },
+    "valueExpression": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "constant",
+            "variable_ref",
+            "bind_variable",
+            "count",
+            "sum",
+            "product",
+            "min",
+            "max",
+            "conditional"
+          ]
+        },
+        "value": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "symbol": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource": {
+          "$ref": "#/$defs/resourceType"
+        },
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/actionValue"
+          }
+        }
+      }
+    },
+    "paymentPrompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "is_optional",
+        "cost_value",
+        "cost_type"
+      ],
+      "properties": {
+        "is_optional": {
+          "type": "boolean"
+        },
+        "cost_value": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "$ref": "#/$defs/valueExpression"
+            }
+          ]
+        },
+        "cost_type": {
+          "$ref": "#/$defs/resourceType"
+        }
+      }
+    },
+    "targetSelector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "type",
+        "zone",
+        "mode",
+        "count"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string",
+          "enum": [
+            "SELF",
+            "FRIENDLY",
+            "ENEMY",
+            "ANY"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "ANY",
+            "SELF",
+            "UNIT",
+            "BUILDING",
+            "COMMAND_CENTER",
+            "RESOURCE",
+            "CARD",
+            "EFFECT",
+            "SUBTYPE"
+          ]
+        },
+        "zone": {
+          "$ref": "#/$defs/zone"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "EXACT",
+            "UP_TO",
+            "ALL",
+            "RANDOM"
+          ]
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "subtype_value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "SUBTYPE"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "subtype_value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "ALL"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "count": {
+                "const": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "statModifiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "attack": {
+          "type": "integer"
+        },
+        "health": {
+          "type": "integer"
+        },
+        "armor": {
+          "type": "integer"
+        },
+        "duration": {
+          "type": "string",
+          "enum": [
+            "UNTIL_END_OF_TURN",
+            "WHILE_IN_PLAY",
+            "PERMANENT",
+            "NEXT_COMBAT"
+          ]
+        }
+      }
+    },
+    "resourceSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "amount"
+      ],
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/resourceType"
+        },
+        "amount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "duration": {
+          "type": "string",
+          "enum": [
+            "EPHEMERAL",
+            "PERMANENT",
+            "UNTIL_END_OF_TURN"
+          ]
+        }
+      }
+    },
+    "tokenSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "card_type",
+        "attack",
+        "health"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "card_type": {
+          "type": "string",
+          "enum": [
+            "Unit",
+            "Building",
+            "Resource"
+          ]
+        },
+        "attack": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "health": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "armor": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/keyword"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "cancelScope": {
+      "type": "string",
+      "enum": [
+        "CURRENT_EFFECT",
+        "TRIGGERED_EFFECT",
+        "PAYMENT_PROMPT",
+        "DAMAGE_EVENT",
+        "MOVEMENT_EVENT"
+      ]
+    },
+    "branchCondition": {
+      "type": "string",
+      "enum": [
+        "PAYMENT_MIXED",
+        "PAYMENT_IDENTICAL",
+        "PAYMENT_DECLINED",
+        "TARGET_DESTROYED",
+        "TARGET_SURVIVED",
+        "IF_CONDITION_MET",
+        "ELSE"
+      ]
+    },
+    "branches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/branchEffect"
+      }
+    },
+    "branchEffect": {
+      "type": "object",
+      "required": [
+        "branch_condition",
+        "action"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "branch_condition": {
+          "$ref": "#/$defs/branchCondition"
+        },
+        "trigger_conditions": {
+          "$ref": "#/$defs/triggerConditions"
+        },
+        "payment_prompt": {
+          "$ref": "#/$defs/paymentPrompt"
+        },
+        "action": {
+          "$ref": "#/$defs/action"
+        },
+        "action_value": {
+          "$ref": "#/$defs/actionValue"
+        },
+        "target": {
+          "$ref": "#/$defs/targetSelector"
+        },
+        "branches": {
+          "$ref": "#/$defs/branches"
+        },
+        "keyword": {
+          "$ref": "#/$defs/keyword"
+        },
+        "stat_modifiers": {
+          "$ref": "#/$defs/statModifiers"
+        },
+        "resource": {
+          "$ref": "#/$defs/resourceSpec"
+        },
+        "token": {
+          "$ref": "#/$defs/tokenSpec"
+        },
+        "destination_zone": {
+          "$ref": "#/$defs/zone"
+        },
+        "cancel_scope": {
+          "$ref": "#/$defs/cancelScope"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/effectSemantics"
+        }
+      ]
+    },
+    "effectSemantics": {
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "BRANCHING_EFFECT"
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "branches"
+            ],
+            "not": {
+              "required": [
+                "target"
+              ]
+            }
+          },
+          "else": {
+            "not": {
+              "required": [
+                "branches"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "enum": [
+                  "DEAL_DAMAGE",
+                  "DEAL_TRUE_DAMAGE",
+                  "HEAL",
+                  "MODIFY_STAT",
+                  "GRANT_KEYWORD",
+                  "DEPLOY_TOKEN",
+                  "DESTROY",
+                  "MOVE",
+                  "MOVE_FORCE",
+                  "CANCEL_EFFECT"
+                ]
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "target"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "enum": [
+                  "DEAL_DAMAGE",
+                  "DEAL_TRUE_DAMAGE",
+                  "HEAL",
+                  "DRAW_CARD",
+                  "GENERATE_RESOURCE",
+                  "DEPLOY_TOKEN"
+                ]
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "action_value"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "GRANT_KEYWORD"
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "keyword"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "MODIFY_STAT"
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "stat_modifiers"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "GENERATE_RESOURCE"
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "resource"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "DEPLOY_TOKEN"
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "token"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "enum": [
+                  "MOVE",
+                  "MOVE_FORCE"
+                ]
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "destination_zone"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "CANCEL_EFFECT"
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "cancel_scope"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

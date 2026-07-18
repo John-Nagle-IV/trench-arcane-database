@@ -1,0 +1,11 @@
+[project]
+name = "trench-arcane-database"
+version = "0.1.0"
+description = "Versioned portable database assets and validation tooling for Trench Arcane"
+requires-python = ">=3.11"
+dependencies = [
+    "jsonschema>=4.26,<5",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"

@@ -1,0 +1,450 @@
+{
+  "version": "1.0.0-CANONICAL",
+  "timestamp": "2026-07-06T12:00:00Z",
+  "cards": {
+    "Charnel Fodder": {
+      "type": "Unit",
+      "cost": "1 Biomass",
+      "stats": "1 / 0 / 1",
+      "abilities": [
+        "Effect: If this unit is destroyed, at the start of your next turn deploy a 1/0/1 Graft-Fiend unit token in the zone this unit was killed in."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Vat-Grown Hound": {
+      "type": "Unit",
+      "cost": "10 Biomass",
+      "stats": "6 / 1 / 8",
+      "abilities": [
+        "Keywords: Swift (May move two zones. -1 Attack this turn if it does). Goliath Siege-Breaker (Unit - Leviathan)",
+        "Keywords: Swift, Demolitionist"
+      ],
+      "flavor": "\"They pumped it full of growth hormones until its skin split, then bolted plows to its fists. It doesn't stop for walls.\"",
+      "status": "iteration_in_progress"
+    },
+    "Corpse Trench": {
+      "type": "Building",
+      "cost": "3 Biomass",
+      "stats": "0 / 0 / 5",
+      "abilities": [
+        "Effect: Whenever a friendly unit in this zone is destroyed, heal your Command Center for 1 Health."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Flesh-Vat Incubator": {
+      "type": "Building",
+      "cost": "4 Biomass",
+      "stats": "0 / 0 / 4",
+      "abilities": [
+        "Effect: At the start of your Upkeep step, deploy a 1/0/1 Graft-Fiend unit token into this zone."
+      ],
+      "flavor": "",
+      "status": "master"
+    },
+    "Necro-Stim Injection": {
+      "type": "Command",
+      "cost": "1 Biomass",
+      "stats": null,
+      "abilities": [
+        "Effect: Target friendly unit gains +2 Attack until the end of the turn. At the end of the turn, that unit is destroyed."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Chemical Stimulants": {
+      "type": "Command",
+      "cost": "2 Biomass",
+      "stats": null,
+      "abilities": [
+        "Effect: Target friendly unit gains Swift and +1 Attack until the end of the turn."
+      ],
+      "flavor": "",
+      "status": "master"
+    },
+    "Mustard Spores": {
+      "type": "Command",
+      "cost": "3 Biomass",
+      "stats": null,
+      "abilities": [
+        "Effect: Deal 1 damage to all units (friendly and enemy) in a target zone. This damage bypasses Armor. METAL CARDS (The Iron & The Gun)"
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Trench-Forged Fusilier": {
+      "type": "Unit",
+      "cost": "2 Metal",
+      "stats": "2 / 0 / 2",
+      "abilities": [
+        "Keywords: Suppressive Fire (Enemies cannot Advance past this zone)."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Diesel Dreadnought": {
+      "type": "Unit",
+      "cost": "11 Metal",
+      "stats": "5 / 3 / 10",
+      "abilities": [
+        "Effect: When deployed, you may move this unit one zone immediately (ignoring Deployment Sickness). The Iron Behemoth (Unit - Leviathan)",
+        "Keywords: Suppressive Fire"
+      ],
+      "flavor": "\"It takes three days to start the engine, but once it's rolling, the entire frontline has to shift to accommodate it.\"",
+      "status": "iteration_in_progress"
+    },
+    "Razor-Wire Redoubt": {
+      "type": "Building",
+      "cost": "2 Metal",
+      "stats": "0 / 2 / 4",
+      "abilities": [
+        "Effect: Whenever an enemy Unit Advances into this zone, it takes 1 damage."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Heavy Siege Battery": {
+      "type": "Building",
+      "cost": "4 Metal",
+      "stats": "0 / 2 / 5",
+      "abilities": [
+        "Keywords: Artillery (Targets adjacent zone. 1-turn cooldown after firing)."
+      ],
+      "flavor": "\"Bolted directly to the bedrock. It doesn't move, it just makes sure nothing else does either.\"",
+      "status": "master"
+    },
+    "Hasty Entrenchment": {
+      "type": "Command",
+      "cost": "2 Metal",
+      "stats": null,
+      "abilities": [
+        "Effect: Target friendly unit or Building gains +1 Armor until the end of the turn."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Rolling Barrage": {
+      "type": "Command",
+      "cost": "4 Metal",
+      "stats": null,
+      "abilities": [
+        "Effect: Deal 4 damage to a target unit or Building. (Subject to Armor). AETHER CARDS (The Crystal & The Spell)"
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Aether-Lens Sniper": {
+      "type": "Unit",
+      "cost": "2 Aether",
+      "stats": "2 / 0 / 1",
+      "abilities": [
+        "Keywords: Piercing (Reduces target's Armor to 0)."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Resonance Mortar": {
+      "type": "Unit",
+      "cost": "9 Aether",
+      "stats": "5 / 1 / 6",
+      "abilities": [
+        "Keywords: Artillery (Targets adjacent zone. Cannot fire if moved. 1-turn cooldown).",
+        "Effect: When this unit's attack successfully destroys an enemy, you may generate 1 Ephemeral Aether. Aetheric Colossus (Unit - Leviathan)",
+        "Keywords: Artillery, Piercing"
+      ],
+      "flavor": "\"A floating monolith of raw crystal. It simply erases whatever its shadow falls upon.\"",
+      "status": "iteration_in_progress"
+    },
+    "Arcane Capacitor": {
+      "type": "Building",
+      "cost": "3 Aether",
+      "stats": "0 / 1 / 3",
+      "abilities": [
+        "Effect: At the start of your Pre-Volley Deployment phase, gain 1 Ephemeral Aether."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Arcane Denial": {
+      "type": "Command",
+      "cost": "3 Aether",
+      "stats": null,
+      "abilities": [
+        "Effect: Cancel target Command card currently on the Stack. Place it in its owner's discard pile."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Phase-Shift": {
+      "type": "Command",
+      "cost": "2 Aether",
+      "stats": null,
+      "abilities": [
+        "Effect: Target friendly unit ignores the Suppressive Fire keyword and takes 0 damage from Buildings during this Movement phase."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Aetheric Displacement": {
+      "type": "Command",
+      "cost": "3 Aether",
+      "stats": null,
+      "abilities": [
+        "Effect: Move target enemy unit to an adjacent zone of your choice. (Can be used to force an enemy to Retreat). MIXED CARDS (Specialists & Synergies)"
+      ],
+      "flavor": "",
+      "status": "master"
+    },
+    "Deep-Trench Sapper": {
+      "type": "Unit",
+      "cost": "1 Metal, 1 Biomass",
+      "stats": "2 / 0 / 2",
+      "abilities": [
+        "Keywords: Sapper (Attack value is doubled against Artillery units)."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Breach-Charge Pioneer": {
+      "type": "Unit",
+      "cost": "2 Metal, 1 Biomass",
+      "stats": "2 / 1 / 3",
+      "abilities": [
+        "Keywords: Demolitionist (Attack value is doubled against Buildings)."
+      ],
+      "flavor": "",
+      "status": "iteration_in_progress"
+    },
+    "Undermine Crawler": {
+      "type": "Unit",
+      "cost": "3 Biomass, 1 Metal",
+      "stats": "2 / 0 / 3",
+      "abilities": [
+        "Keywords: Swift, Sapper"
+      ],
+      "flavor": "\"Half drill, half beast. It tunnels right past the wire and comes up under the gun batteries.\"",
+      "status": "master"
+    },
+    "Flesh-Warped Mage": {
+      "type": "Unit",
+      "cost": "2 Biomass, 2 Aether",
+      "stats": "3 / 0 / 3",
+      "abilities": [
+        "Effect: When deployed, you may permanently destroy a friendly unit in this zone to generate 2 Ephemeral Aether."
+      ],
+      "flavor": "",
+      "status": "master"
+    },
+    "Aetheric Payload": {
+      "type": "Command",
+      "cost": "1 Metal, 1 Aether",
+      "stats": null,
+      "abilities": [
+        "Effect: Target friendly unit gains Demolitionist and Piercing until the end of the turn."
+      ],
+      "flavor": "\"Coating a standard bunker-buster in arcane dust turns a tough siege into a brief flash of light.\"",
+      "status": "master"
+    },
+    "Aetheric Colossus": {
+      "type": "Unit",
+      "cost": null,
+      "stats": null,
+      "abilities": [
+        "NEW!"
+      ],
+      "flavor": "",
+      "status": "new_candidate"
+    },
+    "Goliath Siege-Breaker": {
+      "type": "Unit",
+      "cost": null,
+      "stats": null,
+      "abilities": [
+        "NEW!"
+      ],
+      "flavor": "",
+      "status": "new_candidate"
+    }
+  },
+  "discrepancies": [
+    {
+      "card": "Trench-Forged Fusilier",
+      "type": "STAT_MISMATCH",
+      "master_stats": "2 / 0 / 2",
+      "playtest_stats": "2/0/2"
+    },
+    {
+      "card": "Trench-Forged Fusilier",
+      "type": "COST_MISMATCH",
+      "master_cost": "2 Metal",
+      "playtest_cost": "2M"
+    },
+    {
+      "card": "Diesel Dreadnought",
+      "type": "STAT_MISMATCH",
+      "master_stats": "5 / 3 / 10",
+      "playtest_stats": "3/1/5"
+    },
+    {
+      "card": "Diesel Dreadnought",
+      "type": "COST_MISMATCH",
+      "master_cost": "11 Metal",
+      "playtest_cost": "6M"
+    },
+    {
+      "card": "Aether-Lens Sniper",
+      "type": "STAT_MISMATCH",
+      "master_stats": "2 / 0 / 1",
+      "playtest_stats": "2/0/1"
+    },
+    {
+      "card": "Aether-Lens Sniper",
+      "type": "COST_MISMATCH",
+      "master_cost": "2 Aether",
+      "playtest_cost": "2A"
+    },
+    {
+      "card": "Resonance Mortar",
+      "type": "STAT_MISMATCH",
+      "master_stats": "5 / 1 / 6",
+      "playtest_stats": "4/0/3"
+    },
+    {
+      "card": "Resonance Mortar",
+      "type": "COST_MISMATCH",
+      "master_cost": "9 Aether",
+      "playtest_cost": "5A"
+    },
+    {
+      "card": "Aetheric Colossus",
+      "type": "MISSING_FROM_MASTER",
+      "details": "Card exists in playtest deck but is missing from master-card-list.txt"
+    },
+    {
+      "card": "Razor-Wire Redoubt",
+      "type": "STAT_MISMATCH",
+      "master_stats": "0 / 2 / 4",
+      "playtest_stats": "0/2/4"
+    },
+    {
+      "card": "Razor-Wire Redoubt",
+      "type": "COST_MISMATCH",
+      "master_cost": "2 Metal",
+      "playtest_cost": "2M"
+    },
+    {
+      "card": "Arcane Capacitor",
+      "type": "STAT_MISMATCH",
+      "master_stats": "0 / 1 / 3",
+      "playtest_stats": "0/1/3"
+    },
+    {
+      "card": "Arcane Capacitor",
+      "type": "COST_MISMATCH",
+      "master_cost": "3 Aether",
+      "playtest_cost": "3A"
+    },
+    {
+      "card": "Hasty Entrenchment",
+      "type": "COST_MISMATCH",
+      "master_cost": "2 Metal",
+      "playtest_cost": "2M"
+    },
+    {
+      "card": "Rolling Barrage",
+      "type": "COST_MISMATCH",
+      "master_cost": "4 Metal",
+      "playtest_cost": "4M"
+    },
+    {
+      "card": "Arcane Denial",
+      "type": "COST_MISMATCH",
+      "master_cost": "3 Aether",
+      "playtest_cost": "3A"
+    },
+    {
+      "card": "Charnel Fodder",
+      "type": "STAT_MISMATCH",
+      "master_stats": "1 / 0 / 1",
+      "playtest_stats": "1/0/1"
+    },
+    {
+      "card": "Charnel Fodder",
+      "type": "COST_MISMATCH",
+      "master_cost": "1 Biomass",
+      "playtest_cost": "1B"
+    },
+    {
+      "card": "Vat-Grown Hound",
+      "type": "STAT_MISMATCH",
+      "master_stats": "6 / 1 / 8",
+      "playtest_stats": "3/0/3"
+    },
+    {
+      "card": "Vat-Grown Hound",
+      "type": "COST_MISMATCH",
+      "master_cost": "10 Biomass",
+      "playtest_cost": "4B"
+    },
+    {
+      "card": "Deep-Trench Sapper",
+      "type": "STAT_MISMATCH",
+      "master_stats": "2 / 0 / 2",
+      "playtest_stats": "2/0/2"
+    },
+    {
+      "card": "Deep-Trench Sapper",
+      "type": "COST_MISMATCH",
+      "master_cost": "1 Metal, 1 Biomass",
+      "playtest_cost": "1M, 1B"
+    },
+    {
+      "card": "Breach-Charge Pioneer",
+      "type": "STAT_MISMATCH",
+      "master_stats": "2 / 1 / 3",
+      "playtest_stats": "2/1/3"
+    },
+    {
+      "card": "Breach-Charge Pioneer",
+      "type": "COST_MISMATCH",
+      "master_cost": "2 Metal, 1 Biomass",
+      "playtest_cost": "2M, 1B"
+    },
+    {
+      "card": "Goliath Siege-Breaker",
+      "type": "MISSING_FROM_MASTER",
+      "details": "Card exists in playtest deck but is missing from master-card-list.txt"
+    },
+    {
+      "card": "Corpse Trench",
+      "type": "STAT_MISMATCH",
+      "master_stats": "0 / 0 / 5",
+      "playtest_stats": "0/0/5"
+    },
+    {
+      "card": "Corpse Trench",
+      "type": "COST_MISMATCH",
+      "master_cost": "3 Biomass",
+      "playtest_cost": "3B"
+    },
+    {
+      "card": "Necro-Stim Injection",
+      "type": "COST_MISMATCH",
+      "master_cost": "1 Biomass",
+      "playtest_cost": "1B"
+    },
+    {
+      "card": "Mustard Spores",
+      "type": "COST_MISMATCH",
+      "master_cost": "3 Biomass",
+      "playtest_cost": "3B"
+    },
+    {
+      "card": "Phase-Shift",
+      "type": "COST_MISMATCH",
+      "master_cost": "2 Aether",
+      "playtest_cost": "2A"
+    }
+  ]
+}

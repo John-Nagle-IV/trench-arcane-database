@@ -1,0 +1,10 @@
+{
+  "backend_contract": {
+    "name": "Trench Arcane Backend API",
+    "version": "1.0.1",
+    "canonical_base_path": "/api/v1/",
+    "effect_schema_endpoint": "/api/v1/schemas/effect/",
+    "source_contract_sha256": "ed77f493d3c40b01bcfb0887a83edb51481cfa4b351a2098c6efea4d02770cf0",
+    "ownership": "The backend repository owns OpenAPI and the executable Django schema generator. This repository stores a generated schema snapshot solely for fixture validation."
+  }
+}

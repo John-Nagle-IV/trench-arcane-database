@@ -1,0 +1,91 @@
+Trench Arcane - Initial Unit Roster
+
+Stat Notation: Attack / Armor / Health
+
+Biomass (The Swarm & The Flesh)
+
+Theme: Expendable units, recursion, and rapid movement.
+
+Charnel Fodder (Unit)
+
+Cost: 1 Biomass
+
+Stats: 1 / 0 / 1
+
+Effect: If this unit dies in battle, at the start of your next turn deploy a 1/0/1 Graft-Fiend unit token in the zone this unit was killed in.
+
+Flavor: "They just keep standing back up. I swear to god, I've shot that one three times."
+
+Vat-Grown Hound (Unit)
+
+Cost: 4 Biomass
+
+Stats: 3 / 0 / 3
+
+Keywords: Swift (May move two zones. -1 Attack this turn if it does).
+
+Flavor: "Four legs, no eyes, and a jaw that unhinges. Don't run. You'll just die tired."
+
+Metal (The Iron & The Gun)
+
+Theme: Fortification, heavy plating, and board control.
+
+Trench-Forged Fusilier (Unit)
+
+Cost: 2 Metal
+
+Stats: 2 / 0 / 2
+
+Keywords: Suppressive Fire (Enemies cannot Advance past this zone).
+
+Flavor: "Point the barrel at the mud, pull the trigger until it clicks, reload. Don't think about it."
+
+Diesel Dreadnought (Unit)
+
+Cost: 6 Metal
+
+Stats: 3 / 1 / 5
+
+Effect: When deployed, you may move this unit one zone immediately (ignoring Deployment Sickness).
+
+Flavor: "A walking tomb of iron and exhaust. When you hear the engine choke, pray you aren't in front of it."
+
+Aether (The Crystal & The Spell)
+
+Theme: Surgical strikes, armor bypass, and long-range death.
+
+Aether-Lens Sniper (Unit)
+
+Cost: 2 Aether
+
+Stats: 2 / 0 / 1
+
+Keywords: Piercing (Reduces target's Armor to 0).
+
+Flavor: "The crystal scope hums against your cheek. Just line up the crosshairs and let the light do the work."
+
+Resonance Mortar (Unit)
+
+Cost: 5 Aether
+
+Stats: 4 / 0 / 3
+
+Keywords: Artillery (Targets adjacent zone. Cannot fire if moved. 1-turn cooldown).
+
+Effect: When this unit's attack successfully destroys an enemy, you may generate 1 Ephemeral Aether.
+
+Flavor: "We pack the shells with raw arcane dust. It doesn't just blow them up; it un-writes them."
+
+Mixed Resource (Specialists)
+
+Theme: High utility, requires specific deckbuilding constraints.
+
+Deep-Trench Sapper (Unit)
+
+Cost: 1 Metal, 1 Biomass
+
+Stats: 2 / 0 / 2
+
+Keywords: Sapper (Attack value is doubled against Artillery units).
+
+Flavor: "They don't hear us digging over the sound of their own guns. By the time the shelling stops, the fuses are already lit."

@@ -1,0 +1,101 @@
+{
+  "format": "trench-arcane.migration-vocabulary-reference/v1",
+  "ownership": "Reference snapshot only. Django migrations in trench-arcane-backend are the executable seed authority.",
+  "source_migration": "cards.0001_initial",
+  "vocabularies": {
+    "RuleAction": [
+      "BRANCHING_EFFECT",
+      "DEAL_DAMAGE",
+      "DEAL_TRUE_DAMAGE",
+      "DEPLOY_TOKEN",
+      "DESTROY",
+      "DRAW_CARD",
+      "GENERATE_RESOURCE",
+      "GRANT_KEYWORD",
+      "HEAL",
+      "MODIFY_STAT",
+      "MOVE_FORCE"
+    ],
+    "RuleCondition": [
+      "HAS_ARMOR",
+      "HAS_BUILDING",
+      "HAS_DEPLOYMENT_FATIGUE",
+      "HAS_KEYWORD",
+      "HAS_SUBTYPE",
+      "IN_COMBAT",
+      "IS_DAMAGED",
+      "IS_EXHAUSTED",
+      "IS_FIRST_OCCURRENCE",
+      "IS_TYPE",
+      "NO_BUILDING",
+      "PAYMENT_IDENTICAL",
+      "PAYMENT_MIXED"
+    ],
+    "RuleKeyword": [
+      "ARTILLERY",
+      "DEMOLITIONIST",
+      "PIERCING",
+      "SAPPER",
+      "SUPPRESSIVE_FIRE",
+      "SWIFT"
+    ],
+    "RuleResourceType": [
+      "AETHER",
+      "BIOMASS",
+      "EPHEMERAL_AETHER",
+      "EPHEMERAL_BIOMASS",
+      "EPHEMERAL_METAL",
+      "METAL"
+    ],
+    "RuleTargetMode": [
+      "ALL",
+      "CHOOSE_ONE",
+      "EACH",
+      "EXACT",
+      "GROUP",
+      "RANDOM",
+      "SINGLE",
+      "UP_TO"
+    ],
+    "RuleTargetOwner": [
+      "ACTIVE_PLAYER",
+      "ANY",
+      "ENEMY",
+      "FRIENDLY",
+      "SELF",
+      "SOURCE_CONTROLLER"
+    ],
+    "RuleTargetType": [
+      "ANY",
+      "BUILDING",
+      "COMMAND",
+      "COMMAND_CENTER",
+      "RESOURCE",
+      "SUBTYPE",
+      "UNIT"
+    ],
+    "RuleTrigger": [
+      "ON_ATTACK_DECLARE",
+      "ON_DEATH",
+      "ON_DEFEND",
+      "ON_DEPLOY",
+      "ON_DRAW",
+      "ON_PILLAGE",
+      "ON_TURN_END",
+      "ON_TURN_START",
+      "ON_ZONE_ENTER"
+    ],
+    "RuleZone": [
+      "ADJACENT",
+      "ANY",
+      "BACKWARD",
+      "BASE",
+      "DISCARD",
+      "FIELD",
+      "FORWARD",
+      "HAND",
+      "SAME",
+      "STACK"
+    ]
+  }
+}

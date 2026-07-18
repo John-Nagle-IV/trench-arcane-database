@@ -1,0 +1,47 @@
+[
+  {
+    "name": "unknown-action",
+    "reason": "action must be one of the canonical alpha action enum values",
+    "effect": {
+      "trigger": "ON_DEPLOY",
+      "action": "INVALID_ACTION",
+      "action_value": 1
+    }
+  },
+  {
+    "name": "targeted-action-missing-target",
+    "reason": "targeted actions such as DEAL_DAMAGE must include a target selector",
+    "effect": {
+      "trigger": "ON_DEPLOY",
+      "action": "DEAL_DAMAGE",
+      "action_value": 1
+    }
+  },
+  {
+    "name": "branch-without-condition",
+    "reason": "branch nodes must declare branch_condition so the rules engine can select the branch",
+    "effect": {
+      "trigger": "ON_DRAW",
+      "action": "BRANCHING_EFFECT",
+      "branches": [
+        {
+          "action": "DRAW_CARD",
+          "action_value": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "payment-missing-cost-value",
+    "reason": "payment_prompt requires is_optional, cost_value, and cost_type",
+    "effect": {
+      "trigger": "ON_DEPLOY",
+      "action": "DRAW_CARD",
+      "action_value": 1,
+      "payment_prompt": {
+        "is_optional": true,
+        "cost_type": "ANY"
+      }
+    }
+  }
+]

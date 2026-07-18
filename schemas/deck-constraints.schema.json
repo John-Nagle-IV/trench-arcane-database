@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Trench Arcane Deck Constraints Schema",
+  "description": "Validates the ruleset parameters for deck construction in a given format.",
+  "type": "object",
+  "required": [
+    "main_deck_size_min",
+    "main_deck_size_max",
+    "resource_deck_size",
+    "command_center_count",
+    "max_copies_per_card"
+  ],
+  "properties": {
+    "main_deck_size_min": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Minimum number of cards in the main deck (Units, Buildings, Commands)."
+    },
+    "main_deck_size_max": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum number of cards in the main deck."
+    },
+    "resource_deck_size": {
+      "type": "integer",
+      "description": "Exact number of Resource cards required (e.g., exactly 6)."
+    },
+    "command_center_count": {
+      "type": "integer",
+      "description": "Exact number of Command Centers required (e.g., exactly 1)."
+    },
+    "max_copies_per_card": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum allowed copies of any single card by ID (e.g., 3)."
+    },
+    "max_copies_by_rarity": {
+      "type": "object",
+      "description": "Optional overrides for specific rarities.",
+      "properties": {
+        "Common": { "type": "integer" },
+        "Uncommon": { "type": "integer" },
+        "Rare": { "type": "integer" },
+        "Mythic": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+    "allowed_resource_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["BIOMASS", "METAL", "AETHER"]
+      },
+      "description": "Optional. Restricts the deck to specific resource factions."
+    }
+  }
+}

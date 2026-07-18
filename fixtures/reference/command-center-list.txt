@@ -1,0 +1,129 @@
+Trench Arcane - Command Centers (Initial Archetypes)
+
+Command Centers serve as the player's proxy on the battlefield. They dictate the deck's overarching strategy and provide a thematic anchor for the 40-80 card deck.
+
+Baseline Stats: 35 Health | 2 Armor | 1 Attack
+
+1. High Command: The Grand Redoubt
+
+The Standard Issue (Balanced / Midrange)
+
+Stats: 1 Attack | 35 Health | 2 Armor
+
+Ability: Trench Logistics — The first Unit you deploy each turn costs 1 less resource of any type.
+
+Flavor: "Hold the line. Reinforcements will be there when the mud dries." — General Radek
+
+Playstyle: Highly flexible. Excellent for mixed-resource decks looking for a steady, reliable tempo advantage every single turn.
+
+2. High Command: Ironclad Bastion
+
+The Metal Turtle (Defensive / Artillery)
+
+Stats: 0 Attack | 40 Health | 3 Armor
+
+Ability: Deep Entrenchment — Buildings you deploy cost 1 less Metal (to a minimum of 1).
+
+Flavor: "Let them break their teeth on our steel. We have enough shells to bury whatever is left."
+
+Playstyle: Stalls the game. The monstrous 3 Armor makes it immune to anything but heavy tanks and massive swarms. It wants to build Razor-Wire Redoubts and Artillery to bleed the enemy dry.
+
+3. High Command: The Charnel Vats
+
+The Biomass Swarm (Aggro / Token)
+
+Stats: 2 Attack | 35 Health | 0 Armor
+
+Ability: Flesh is Cheap — During your Pre-Volley Deployment, you may choose to take 2 unpreventable damage to your Command Center. If you do, deploy a 1 Attack / 1 Health Graft-Fiend Unit token into your Base.
+
+Flavor: "Do not mourn the fallen. Bring me their parts; the war effort demands recycling." — Stitch-Doc Vane
+
+Playstyle: Highly aggressive. 0 Armor means it takes every point of damage thrown at it, but its 2 Attack kills most infantry that touch it. The player sacrifices their own health to flood the board with cheap units and overwhelm the enemy early.
+
+4. High Command: Resonance Spire
+
+The Aether Spire (Control / Magic)
+
+Stats: 2 Attack | 30 Health | 1 Armor
+
+Ability: Arcane Overcharge — Once per turn, you may spend 1 Ephemeral Aether to give a target friendly unit Piercing until the end of the turn.
+
+Flavor: "The crystals sing a beautiful, terrible song. Cover your ears and fire the cannon."
+
+Playstyle: Wants to play Aether cards and pillage. By granting Piercing, it allows even weak units to sunder heavy armor, completely countering the Ironclad Bastion archetype.
+
+5. High Command: The Sapper's Warren
+
+The Underground Network (Pillage / Sabotage)
+
+Stats: 1 Attack | 35 Health | 2 Armor
+
+Ability: Spoils of War — Whenever a unit you control successfully Pillages an enemy Resource, heal 1 Health to this Command Center.
+
+Flavor: "Why build our own bullets when the enemy is kind enough to keep them in boxes across the field?"
+
+Playstyle: Promotes highly interactive, surgical strikes. Wants to use Swift units and Sappers to constantly raid the enemy's resources, sustaining its own health in a long war of attrition.Trench Arcane - Command Centers (Initial Archetypes)
+
+Command Centers serve as the player's proxy on the battlefield. They dictate the deck's overarching strategy and provide a thematic anchor for the 40-80 card deck.
+
+Baseline Stats: 35 Health | 2 Armor | 1 Attack
+
+1. High Command: The Grand Redoubt
+
+The Standard Issue (Balanced / Midrange)
+
+Stats: 1 Attack | 35 Health | 2 Armor
+
+Ability: Trench Logistics — The first Unit you deploy each turn costs 1 less resource of any type.
+
+Flavor: "Hold the line. Reinforcements will be there when the mud dries." — General Radek
+
+Playstyle: Highly flexible. Excellent for mixed-resource decks looking for a steady, reliable tempo advantage every single turn.
+
+2. High Command: Ironclad Bastion
+
+The Metal Turtle (Defensive / Artillery)
+
+Stats: 0 Attack | 40 Health | 3 Armor
+
+Ability: Deep Entrenchment — Buildings you deploy cost 1 less Metal (to a minimum of 1).
+
+Flavor: "Let them break their teeth on our steel. We have enough shells to bury whatever is left."
+
+Playstyle: Stalls the game. The monstrous 3 Armor makes it immune to anything but heavy tanks and massive swarms. It wants to build Razor-Wire Redoubts and Artillery to bleed the enemy dry.
+
+3. High Command: The Charnel Vats
+
+The Biomass Swarm (Aggro / Token)
+
+Stats: 2 Attack | 35 Health | 0 Armor
+
+Ability: Flesh is Cheap — During your Pre-Volley Deployment, you may choose to take 2 unpreventable damage to your Command Center. If you do, deploy a 1 Attack / 1 Health Graft-Fiend Unit token into your Base.
+
+Flavor: "Do not mourn the fallen. Bring me their parts; the war effort demands recycling." — Stitch-Doc Vane
+
+Playstyle: Highly aggressive. 0 Armor means it takes every point of damage thrown at it, but its 2 Attack kills most infantry that touch it. The player sacrifices their own health to flood the board with cheap units and overwhelm the enemy early.
+
+4. High Command: Resonance Spire
+
+The Aether Spire (Control / Magic)
+
+Stats: 2 Attack | 30 Health | 1 Armor
+
+Ability: Arcane Overcharge — Once per turn, you may spend 1 Ephemeral Aether to give a target friendly unit Piercing until the end of the turn.
+
+Flavor: "The crystals sing a beautiful, terrible song. Cover your ears and fire the cannon."
+
+Playstyle: Wants to play Aether cards and pillage. By granting Piercing, it allows even weak units to sunder heavy armor, completely countering the Ironclad Bastion archetype.
+
+5. High Command: The Sapper's Warren
+
+The Underground Network (Pillage / Sabotage)
+
+Stats: 1 Attack | 35 Health | 2 Armor
+
+Ability: Spoils of War — Whenever a unit you control successfully Pillages an enemy Resource, heal 1 Health to this Command Center.
+
+Flavor: "Why build our own bullets when the enemy is kind enough to keep them in boxes across the field?"
+
+Playstyle: Promotes highly interactive, surgical strikes. Wants to use Swift units and Sappers to constantly raid the enemy's resources, sustaining its own health in a long war of attrition.

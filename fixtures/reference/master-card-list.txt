@@ -1,0 +1,257 @@
+Trench Arcane - Master Card List
+
+Playtest Set v2.0 (Full 3-Copy Legal Set)
+
+Stat Notation: Attack / Armor / Health
+
+COMMAND CENTERS (Limit 1 per deck, starts on board)
+
+1. High Command: The Grand Redoubt
+
+Stats: 1 / 2 / 35
+
+Ability: Trench Logistics — The first Unit you deploy each turn costs 1 less resource of any type.
+
+2. High Command: Ironclad Bastion
+
+Stats: 0 / 3 / 40
+
+Ability: Deep Entrenchment — Buildings you deploy cost 1 less Metal (to a minimum of 1).
+
+3. High Command: The Charnel Vats
+
+Stats: 2 / 0 / 35
+
+Ability: Flesh is Cheap — During Pre-Volley Deployment, you may take 2 unpreventable damage to your Command Center to deploy a 1/0/1 Graft-Fiend unit token into your Base.
+
+4. High Command: Resonance Spire
+
+Stats: 2 / 1 / 30
+
+Ability: Arcane Overcharge — Once per turn, spend 1 Ephemeral Aether to give a target friendly unit Piercing until end of turn.
+
+5. High Command: The Sapper's Warren
+
+Stats: 1 / 2 / 35
+
+Ability: Spoils of War — Whenever a unit you control successfully Pillages an enemy Resource, heal 1 Health to this Command Center.
+
+BIOMASS CARDS (The Swarm & The Flesh)
+
+Charnel Fodder (Unit)
+
+Cost: 1 Biomass
+
+Stats: 1 / 0 / 1
+
+Effect: If this unit is destroyed, at the start of your next turn deploy a 1/0/1 Graft-Fiend unit token in the zone this unit was killed in.
+
+Vat-Grown Hound (Unit)
+
+Cost: 4 Biomass
+
+Stats: 3 / 0 / 3
+
+Keywords: Swift (May move two zones. -1 Attack this turn if it does).
+
+Goliath Siege-Breaker (Unit - Leviathan)
+
+Cost: 10 Biomass
+
+Stats: 6 / 1 / 8
+
+Keywords: Swift, Demolitionist
+
+Flavor: "They pumped it full of growth hormones until its skin split, then bolted plows to its fists. It doesn't stop for walls."
+
+Corpse Trench (Building)
+
+Cost: 3 Biomass
+
+Stats: 0 / 0 / 5
+
+Effect: Whenever a friendly unit in this zone is destroyed, heal your Command Center for 1 Health.
+
+Flesh-Vat Incubator (Building)
+
+Cost: 4 Biomass
+
+Stats: 0 / 0 / 4
+
+Effect: At the start of your Upkeep step, deploy a 1/0/1 Graft-Fiend unit token into this zone.
+
+Necro-Stim Injection (Command)
+
+Cost: 1 Biomass
+
+Effect: Target friendly unit gains +2 Attack until the end of the turn. At the end of the turn, that unit is destroyed.
+
+Chemical Stimulants (Command)
+
+Cost: 2 Biomass
+
+Effect: Target friendly unit gains Swift and +1 Attack until the end of the turn.
+
+Mustard Spores (Command)
+
+Cost: 3 Biomass
+
+Effect: Deal 1 damage to all units (friendly and enemy) in a target zone. This damage bypasses Armor.
+
+METAL CARDS (The Iron & The Gun)
+
+Trench-Forged Fusilier (Unit)
+
+Cost: 2 Metal
+
+Stats: 2 / 0 / 2
+
+Keywords: Suppressive Fire (Enemies cannot Advance past this zone).
+
+Diesel Dreadnought (Unit)
+
+Cost: 6 Metal
+
+Stats: 3 / 1 / 5
+
+Effect: When deployed, you may move this unit one zone immediately (ignoring Deployment Sickness).
+
+The Iron Behemoth (Unit - Leviathan)
+
+Cost: 11 Metal
+
+Stats: 5 / 3 / 10
+
+Keywords: Suppressive Fire
+
+Flavor: "It takes three days to start the engine, but once it's rolling, the entire frontline has to shift to accommodate it."
+
+Razor-Wire Redoubt (Building)
+
+Cost: 2 Metal
+
+Stats: 0 / 2 / 4
+
+Effect: Whenever an enemy Unit Advances into this zone, it takes 1 damage.
+
+Heavy Siege Battery (Building)
+
+Cost: 4 Metal
+
+Stats: 0 / 2 / 5
+
+Keywords: Artillery (Targets adjacent zone. 1-turn cooldown after firing).
+
+Flavor: "Bolted directly to the bedrock. It doesn't move, it just makes sure nothing else does either."
+
+Hasty Entrenchment (Command)
+
+Cost: 2 Metal
+
+Effect: Target friendly unit or Building gains +1 Armor until the end of the turn.
+
+Rolling Barrage (Command)
+
+Cost: 4 Metal
+
+Effect: Deal 4 damage to a target unit or Building. (Subject to Armor).
+
+AETHER CARDS (The Crystal & The Spell)
+
+Aether-Lens Sniper (Unit)
+
+Cost: 2 Aether
+
+Stats: 2 / 0 / 1
+
+Keywords: Piercing (Reduces target's Armor to 0).
+
+Resonance Mortar (Unit)
+
+Cost: 5 Aether
+
+Stats: 4 / 0 / 3
+
+Keywords: Artillery (Targets adjacent zone. Cannot fire if moved. 1-turn cooldown).
+
+Effect: When this unit's attack successfully destroys an enemy, you may generate 1 Ephemeral Aether.
+
+Aetheric Colossus (Unit - Leviathan)
+
+Cost: 9 Aether
+
+Stats: 5 / 1 / 6
+
+Keywords: Artillery, Piercing
+
+Flavor: "A floating monolith of raw crystal. It simply erases whatever its shadow falls upon."
+
+Arcane Capacitor (Building)
+
+Cost: 3 Aether
+
+Stats: 0 / 1 / 3
+
+Effect: At the start of your Pre-Volley Deployment phase, gain 1 Ephemeral Aether.
+
+Arcane Denial (Command)
+
+Cost: 3 Aether
+
+Effect: Cancel target Command card currently on the Stack. Place it in its owner's discard pile.
+
+Phase-Shift (Command)
+
+Cost: 2 Aether
+
+Effect: Target friendly unit ignores the Suppressive Fire keyword and takes 0 damage from Buildings during this Movement phase.
+
+Aetheric Displacement (Command)
+
+Cost: 3 Aether
+
+Effect: Move target enemy unit to an adjacent zone of your choice. (Can be used to force an enemy to Retreat).
+
+MIXED CARDS (Specialists & Synergies)
+
+Deep-Trench Sapper (Unit)
+
+Cost: 1 Metal, 1 Biomass
+
+Stats: 2 / 0 / 2
+
+Keywords: Sapper (Attack value is doubled against Artillery units).
+
+Breach-Charge Pioneer (Unit)
+
+Cost: 2 Metal, 1 Biomass
+
+Stats: 2 / 1 / 3
+
+Keywords: Demolitionist (Attack value is doubled against Buildings).
+
+Undermine Crawler (Unit)
+
+Cost: 3 Biomass, 1 Metal
+
+Stats: 2 / 0 / 3
+
+Keywords: Swift, Sapper
+
+Flavor: "Half drill, half beast. It tunnels right past the wire and comes up under the gun batteries."
+
+Flesh-Warped Mage (Unit)
+
+Cost: 2 Biomass, 2 Aether
+
+Stats: 3 / 0 / 3
+
+Effect: When deployed, you may permanently destroy a friendly unit in this zone to generate 2 Ephemeral Aether.
+
+Aetheric Payload (Command)
+
+Cost: 1 Metal, 1 Aether
+
+Effect: Target friendly unit gains Demolitionist and Piercing until the end of the turn.
+
+Flavor: "Coating a standard bunker-buster in arcane dust turns a tough siege into a brief flash of light."

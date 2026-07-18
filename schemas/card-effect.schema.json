@@ -1,0 +1,1008 @@
+{
+  "$defs": {
+    "costExpression": {
+      "properties": {
+        "amount": {
+          "$ref": "#/$defs/valueExpression"
+        },
+        "kind": {
+          "enum": [
+            "exhaust_source",
+            "resource"
+          ],
+          "type": "string"
+        },
+        "resource": {
+          "enum": [
+            "AETHER",
+            "BIOMASS",
+            "METAL"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "type": "object"
+    },
+    "paymentValueExpression": {
+      "oneOf": [
+        {
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "properties": {
+            "condition": {
+              "type": "object"
+            },
+            "display": {
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "bind_variable",
+                "conditional",
+                "constant",
+                "count",
+                "max",
+                "min",
+                "product",
+                "sum",
+                "variable_ref"
+              ],
+              "type": "string"
+            },
+            "max": {
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "min": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "resource": {
+              "enum": [
+                "AETHER",
+                "ANY",
+                "BIOMASS",
+                "METAL"
+              ],
+              "type": "string"
+            },
+            "source": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "symbol": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "terms": {
+              "items": {
+                "$ref": "#/$defs/valueExpression"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "value": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "when_false": {
+              "$ref": "#/$defs/valueExpression"
+            },
+            "when_true": {
+              "$ref": "#/$defs/valueExpression"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "valueExpression": {
+      "oneOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "properties": {
+            "condition": {
+              "type": "object"
+            },
+            "display": {
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "bind_variable",
+                "conditional",
+                "constant",
+                "count",
+                "max",
+                "min",
+                "product",
+                "sum",
+                "variable_ref"
+              ],
+              "type": "string"
+            },
+            "max": {
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "min": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "resource": {
+              "enum": [
+                "AETHER",
+                "ANY",
+                "BIOMASS",
+                "METAL"
+              ],
+              "type": "string"
+            },
+            "source": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "symbol": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "terms": {
+              "items": {
+                "$ref": "#/$defs/valueExpression"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "value": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "when_false": {
+              "$ref": "#/$defs/valueExpression"
+            },
+            "when_true": {
+              "$ref": "#/$defs/valueExpression"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "enum": [
+              "BANK_RESOURCE",
+              "DEAL_DAMAGE",
+              "DEAL_TRUE_DAMAGE",
+              "DEPLOY_TOKEN",
+              "DISCARD_CARD",
+              "DRAW_CARD",
+              "GENERATE_RESOURCE",
+              "HEAL",
+              "MODIFY_COST",
+              "MODIFY_STAT",
+              "MOVE",
+              "PILLAGE_RESOURCE",
+              "PREVENT_DAMAGE",
+              "SPEND_RESOURCE"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "action_value"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "enum": [
+              "ADVANCE",
+              "BRANCHING_EFFECT",
+              "CANCEL_COMMAND",
+              "CANCEL_EFFECT",
+              "COPY_STACK_ITEM",
+              "COUNTER_STACK_ITEM",
+              "DESTROY",
+              "DESTROY_AT_END_OF_TURN",
+              "GRANT_KEYWORD",
+              "MOVE_FORCE",
+              "REMOVE_KEYWORD",
+              "RETREAT"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "not": {
+          "required": [
+            "action_value"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "enum": [
+              "ADVANCE",
+              "DEAL_DAMAGE",
+              "DEAL_TRUE_DAMAGE",
+              "DEPLOY_TOKEN",
+              "DESTROY",
+              "DISCARD_CARD",
+              "GRANT_KEYWORD",
+              "HEAL",
+              "MODIFY_COST",
+              "MODIFY_STAT",
+              "MOVE",
+              "MOVE_FORCE",
+              "PREVENT_DAMAGE",
+              "REMOVE_KEYWORD",
+              "RETREAT"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "target"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "enum": [
+              "BANK_RESOURCE",
+              "CANCEL_COMMAND",
+              "CANCEL_EFFECT",
+              "COPY_STACK_ITEM",
+              "COUNTER_STACK_ITEM",
+              "DESTROY_AT_END_OF_TURN",
+              "DRAW_CARD",
+              "GENERATE_RESOURCE",
+              "PILLAGE_RESOURCE",
+              "SPEND_RESOURCE"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "not": {
+          "required": [
+            "target"
+          ]
+        }
+      }
+    },
+    {
+      "else": {
+        "not": {
+          "required": [
+            "branches"
+          ]
+        }
+      },
+      "if": {
+        "properties": {
+          "action": {
+            "const": "BRANCHING_EFFECT"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "target"
+              ]
+            },
+            {
+              "required": [
+                "action_value"
+              ]
+            }
+          ]
+        },
+        "required": [
+          "branches"
+        ]
+      }
+    }
+  ],
+  "properties": {
+    "action": {
+      "enum": [
+        "ADVANCE",
+        "BANK_RESOURCE",
+        "BRANCHING_EFFECT",
+        "CANCEL_COMMAND",
+        "CANCEL_EFFECT",
+        "COPY_STACK_ITEM",
+        "COUNTER_STACK_ITEM",
+        "DEAL_DAMAGE",
+        "DEAL_TRUE_DAMAGE",
+        "DEPLOY_TOKEN",
+        "DESTROY",
+        "DESTROY_AT_END_OF_TURN",
+        "DISCARD_CARD",
+        "DRAW_CARD",
+        "GENERATE_RESOURCE",
+        "GRANT_KEYWORD",
+        "HEAL",
+        "MODIFY_COST",
+        "MODIFY_STAT",
+        "MOVE",
+        "MOVE_FORCE",
+        "PILLAGE_RESOURCE",
+        "PREVENT_DAMAGE",
+        "REMOVE_KEYWORD",
+        "RETREAT",
+        "SPEND_RESOURCE"
+      ],
+      "type": "string"
+    },
+    "action_value": {
+      "$ref": "#/$defs/valueExpression"
+    },
+    "branches": {
+      "items": {
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "enum": [
+                    "BANK_RESOURCE",
+                    "DEAL_DAMAGE",
+                    "DEAL_TRUE_DAMAGE",
+                    "DEPLOY_TOKEN",
+                    "DISCARD_CARD",
+                    "DRAW_CARD",
+                    "GENERATE_RESOURCE",
+                    "HEAL",
+                    "MODIFY_COST",
+                    "MODIFY_STAT",
+                    "MOVE",
+                    "PILLAGE_RESOURCE",
+                    "PREVENT_DAMAGE",
+                    "SPEND_RESOURCE"
+                  ]
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "action_value"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "enum": [
+                    "ADVANCE",
+                    "BRANCHING_EFFECT",
+                    "CANCEL_COMMAND",
+                    "CANCEL_EFFECT",
+                    "COPY_STACK_ITEM",
+                    "COUNTER_STACK_ITEM",
+                    "DESTROY",
+                    "DESTROY_AT_END_OF_TURN",
+                    "GRANT_KEYWORD",
+                    "MOVE_FORCE",
+                    "REMOVE_KEYWORD",
+                    "RETREAT"
+                  ]
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "not": {
+                "required": [
+                  "action_value"
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "enum": [
+                    "ADVANCE",
+                    "DEAL_DAMAGE",
+                    "DEAL_TRUE_DAMAGE",
+                    "DEPLOY_TOKEN",
+                    "DESTROY",
+                    "DISCARD_CARD",
+                    "GRANT_KEYWORD",
+                    "HEAL",
+                    "MODIFY_COST",
+                    "MODIFY_STAT",
+                    "MOVE",
+                    "MOVE_FORCE",
+                    "PREVENT_DAMAGE",
+                    "REMOVE_KEYWORD",
+                    "RETREAT"
+                  ]
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "target"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "enum": [
+                    "BANK_RESOURCE",
+                    "CANCEL_COMMAND",
+                    "CANCEL_EFFECT",
+                    "COPY_STACK_ITEM",
+                    "COUNTER_STACK_ITEM",
+                    "DESTROY_AT_END_OF_TURN",
+                    "DRAW_CARD",
+                    "GENERATE_RESOURCE",
+                    "PILLAGE_RESOURCE",
+                    "SPEND_RESOURCE"
+                  ]
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "not": {
+                "required": [
+                  "target"
+                ]
+              }
+            }
+          },
+          {
+            "else": {
+              "not": {
+                "required": [
+                  "branches"
+                ]
+              }
+            },
+            "if": {
+              "properties": {
+                "action": {
+                  "const": "BRANCHING_EFFECT"
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "target"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "action_value"
+                    ]
+                  }
+                ]
+              },
+              "required": [
+                "branches"
+              ]
+            }
+          },
+          {
+            "not": {
+              "required": [
+                "trigger"
+              ]
+            }
+          }
+        ],
+        "properties": {
+          "action": {
+            "enum": [
+              "ADVANCE",
+              "BANK_RESOURCE",
+              "BRANCHING_EFFECT",
+              "CANCEL_COMMAND",
+              "CANCEL_EFFECT",
+              "COPY_STACK_ITEM",
+              "COUNTER_STACK_ITEM",
+              "DEAL_DAMAGE",
+              "DEAL_TRUE_DAMAGE",
+              "DEPLOY_TOKEN",
+              "DESTROY",
+              "DESTROY_AT_END_OF_TURN",
+              "DISCARD_CARD",
+              "DRAW_CARD",
+              "GENERATE_RESOURCE",
+              "GRANT_KEYWORD",
+              "HEAL",
+              "MODIFY_COST",
+              "MODIFY_STAT",
+              "MOVE",
+              "MOVE_FORCE",
+              "PILLAGE_RESOURCE",
+              "PREVENT_DAMAGE",
+              "REMOVE_KEYWORD",
+              "RETREAT",
+              "SPEND_RESOURCE"
+            ],
+            "type": "string"
+          },
+          "action_value": {
+            "$ref": "#/$defs/valueExpression"
+          },
+          "branch_condition": {
+            "enum": [
+              "ELSE",
+              "IF_CONDITION_MET",
+              "PAYMENT_DECLINED",
+              "PAYMENT_IDENTICAL",
+              "PAYMENT_MIXED",
+              "TARGET_DESTROYED",
+              "TARGET_SURVIVED"
+            ],
+            "type": "string"
+          },
+          "keyword": {
+            "type": "string"
+          },
+          "schema_version": {
+            "enum": [
+              1
+            ],
+            "type": "integer"
+          },
+          "target": {
+            "additionalProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "mode": {
+                      "const": "ALL"
+                    }
+                  },
+                  "required": [
+                    "mode"
+                  ]
+                },
+                "then": {
+                  "properties": {
+                    "count": {
+                      "const": 1
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "type": {
+                      "const": "SUBTYPE"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ]
+                },
+                "then": {
+                  "required": [
+                    "subtype_value"
+                  ]
+                }
+              }
+            ],
+            "properties": {
+              "count": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "mode": {
+                "enum": [
+                  "ALL",
+                  "CHOOSE_ONE",
+                  "EACH",
+                  "EXACT",
+                  "GROUP",
+                  "RANDOM",
+                  "SINGLE",
+                  "UP_TO"
+                ],
+                "type": "string"
+              },
+              "owner": {
+                "enum": [
+                  "ACTIVE_PLAYER",
+                  "ANY",
+                  "ENEMY",
+                  "FRIENDLY",
+                  "NON_ACTIVE_PLAYER",
+                  "OWNER",
+                  "SELF",
+                  "SOURCE_CONTROLLER",
+                  "TARGET_CONTROLLER"
+                ],
+                "type": "string"
+              },
+              "subtype_value": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "ANY",
+                  "BUILDING",
+                  "CARD",
+                  "COMMAND",
+                  "COMMAND_CENTER",
+                  "EFFECT",
+                  "ENGAGEMENT",
+                  "PLAYER",
+                  "RESOURCE",
+                  "SELF",
+                  "STACK_ITEM",
+                  "SUBTYPE",
+                  "TOKEN",
+                  "UNIT",
+                  "ZONE"
+                ],
+                "type": "string"
+              },
+              "zone": {
+                "enum": [
+                  "ADJACENT",
+                  "ANY",
+                  "BACKWARD",
+                  "BASE",
+                  "COMMAND_ZONE",
+                  "CURRENT_ZONE",
+                  "DECK",
+                  "DISCARD",
+                  "FIELD",
+                  "FORWARD",
+                  "HAND",
+                  "OPPONENT_BASE",
+                  "PLAYER_BASE",
+                  "RESOURCE_DECK",
+                  "SAME",
+                  "STACK",
+                  "TARGET_ZONE"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "action",
+          "branch_condition"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "keyword": {
+      "type": "string"
+    },
+    "payment_prompt": {
+      "additionalProperties": false,
+      "properties": {
+        "cost_type": {
+          "enum": [
+            "AETHER",
+            "ANY",
+            "BIOMASS",
+            "EPHEMERAL_AETHER",
+            "EPHEMERAL_ANY",
+            "EPHEMERAL_BIOMASS",
+            "EPHEMERAL_METAL",
+            "METAL"
+          ],
+          "type": "string"
+        },
+        "cost_value": {
+          "$ref": "#/$defs/paymentValueExpression"
+        },
+        "is_optional": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "cost_type",
+        "cost_value",
+        "is_optional"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "enum": [
+        1
+      ],
+      "type": "integer"
+    },
+    "target": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "ALL"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "count": {
+                "const": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "SUBTYPE"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "subtype_value"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "count": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "mode": {
+          "enum": [
+            "ALL",
+            "CHOOSE_ONE",
+            "EACH",
+            "EXACT",
+            "GROUP",
+            "RANDOM",
+            "SINGLE",
+            "UP_TO"
+          ],
+          "type": "string"
+        },
+        "owner": {
+          "enum": [
+            "ACTIVE_PLAYER",
+            "ANY",
+            "ENEMY",
+            "FRIENDLY",
+            "NON_ACTIVE_PLAYER",
+            "OWNER",
+            "SELF",
+            "SOURCE_CONTROLLER",
+            "TARGET_CONTROLLER"
+          ],
+          "type": "string"
+        },
+        "subtype_value": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "ANY",
+            "BUILDING",
+            "CARD",
+            "COMMAND",
+            "COMMAND_CENTER",
+            "EFFECT",
+            "ENGAGEMENT",
+            "PLAYER",
+            "RESOURCE",
+            "SELF",
+            "STACK_ITEM",
+            "SUBTYPE",
+            "TOKEN",
+            "UNIT",
+            "ZONE"
+          ],
+          "type": "string"
+        },
+        "zone": {
+          "enum": [
+            "ADJACENT",
+            "ANY",
+            "BACKWARD",
+            "BASE",
+            "COMMAND_ZONE",
+            "CURRENT_ZONE",
+            "DECK",
+            "DISCARD",
+            "FIELD",
+            "FORWARD",
+            "HAND",
+            "OPPONENT_BASE",
+            "PLAYER_BASE",
+            "RESOURCE_DECK",
+            "SAME",
+            "STACK",
+            "TARGET_ZONE"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "trigger": {
+      "enum": [
+        "ON_ADVANCE",
+        "ON_ARMOR_SUNDERED",
+        "ON_ATTACK_DECLARE",
+        "ON_COMMAND_DEPLOYED",
+        "ON_DAMAGE",
+        "ON_DAMAGE_DEALT",
+        "ON_DAMAGE_TAKEN",
+        "ON_DEATH",
+        "ON_DEFEND",
+        "ON_DEPLOY",
+        "ON_DESTROYED",
+        "ON_DRAW",
+        "ON_DRAW_STEP",
+        "ON_ENGAGEMENT_DECLARE",
+        "ON_HEAL",
+        "ON_MOVEMENT",
+        "ON_PILLAGE",
+        "ON_POST_VOLLEY_DEPLOYMENT",
+        "ON_PRE_VOLLEY_DEPLOYMENT",
+        "ON_PRIORITY_PASS",
+        "ON_RESOURCE_GENERATION",
+        "ON_RETREAT",
+        "ON_STACK_ITEM_ADDED",
+        "ON_STACK_RESOLVE",
+        "ON_TURN_END",
+        "ON_TURN_START",
+        "ON_UPKEEP",
+        "ON_ZONE_ENTER",
+        "PASSIVE"
+      ],
+      "type": "string"
+    },
+    "trigger_conditions": {
+      "items": {
+        "enum": [
+          "ARMOR_SUNDERED",
+          "ATTACKED_THIS_TURN",
+          "COMMAND_ON_STACK",
+          "CONTROLS_BUILDING",
+          "CONTROLS_UNIT",
+          "ELSE",
+          "HAS_ARMOR",
+          "HAS_BUILDING",
+          "HAS_DEPLOYMENT_FATIGUE",
+          "HAS_KEYWORD",
+          "HAS_PRIORITY",
+          "HAS_SUBTYPE",
+          "IF_CONDITION_MET",
+          "IN_COMBAT",
+          "IN_ENGAGEMENT",
+          "IS_ACTIVE_PLAYER",
+          "IS_DAMAGED",
+          "IS_EXHAUSTED",
+          "IS_FIRST_OCCURRENCE",
+          "IS_TYPE",
+          "MOVED_THIS_TURN",
+          "NO_BUILDING",
+          "OPPONENT_TURN",
+          "PAYMENT_DECLINED",
+          "PAYMENT_IDENTICAL",
+          "PAYMENT_MIXED",
+          "PAYMENT_PAID",
+          "RESOURCE_EXPOSED",
+          "SOURCE_IN_BASE",
+          "SOURCE_IN_FIELD",
+          "TARGET_DAMAGED",
+          "TARGET_DESTROYED",
+          "TARGET_SURVIVED",
+          "YOUR_TURN"
+        ],
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "action",
+    "trigger"
+  ],
+  "title": "Trench Arcane Dynamic Effect Schema",
+  "type": "object"
+}

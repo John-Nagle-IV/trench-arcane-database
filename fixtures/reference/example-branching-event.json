@@ -1,0 +1,35 @@
+{
+  "trigger": "ON_DRAW",
+  "payment_prompt": {
+    "is_optional": true,
+    "cost_value": 2,
+    "cost_type": "ANY"
+  },
+  "action": "BRANCHING_EFFECT",
+  "branches": [
+    {
+      "branch_condition": "PAYMENT_MIXED",
+      "action": "DEAL_DAMAGE",
+      "action_value": 1,
+      "target": {
+        "owner": "ANY",
+        "type": "BUILDING",
+        "zone": "ANY",
+        "mode": "EXACT",
+        "count": 1
+      }
+    },
+    {
+      "branch_condition": "PAYMENT_IDENTICAL",
+      "action": "DEAL_DAMAGE",
+      "action_value": 2,
+      "target": {
+        "owner": "ANY",
+        "type": "BUILDING",
+        "zone": "ANY",
+        "mode": "EXACT",
+        "count": 1
+      }
+    }
+  ]
+}
